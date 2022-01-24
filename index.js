@@ -27,7 +27,6 @@ function pokeSearch(pokeList){
     }
 }
 
-
 //Pokemon by region by max ID
 //kanto-151
 //Johto - 251
