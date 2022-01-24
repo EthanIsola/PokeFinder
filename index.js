@@ -1,10 +1,13 @@
-let nameSearch = "https://pokeapi.co/api/v2/pokemon/"
+
+
+let search = "https://pokeapi.co/api/v2/pokemon/"
 let name;
 
 addEventListener('DOMContentLoaded', ()=> {
-    fetch(`${nameSearch}${name}`)
-    .then(promise => promise.json)
+    fetch(`${search}${name}`)
+    .then(promise => promise.json())
     .then(pokemon => {
+    pokeSearch(pokemon)
 
     })
 })
@@ -24,3 +27,36 @@ function pokeSearch(pokeList){
     }
 }
 
+
+//Pokemon by region by max ID
+//kanto-151
+//Johto - 251
+//Hoenn - 386
+//Sinnoh - 493
+//Unova - 649
+//Kalos - 721
+//Alola - 809
+//Galar - 890 
+function mapListener(){
+    .addEventListener('click', ()=>{
+        
+    })
+}
+
+//rng for encounters
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+//generates random encounter
+.addEventListener('click', rnde())
+function rnde(){
+    let num = getRandomIntInclusive(1,890)
+    fetch(`${search}${num}`)
+    .then(promise => promise.json())
+    .then(pokemon =>{
+    pokeSearch(pokemon)
+    })
+}
