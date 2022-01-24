@@ -1,10 +1,14 @@
-
-
 let search = "https://pokeapi.co/api/v2/pokemon/"
 let name;
+randButtom = document.getElementById('subrandom')
+searchButton = document.getElementById('subsearch')
+sideList = document.querySelector('ul')
+pokepic = document.getElementById('pokemon')
+
+
 
 addEventListener('DOMContentLoaded', ()=> {
-    fetch(`${search}${name}`)
+    fetch(`${search}pikachu`)
     .then(promise => promise.json())
     .then(pokemon => {
     pokeSearch(pokemon)
@@ -15,6 +19,7 @@ addEventListener('DOMContentLoaded', ()=> {
 
 //parses data from pokemon search fetch request
 function pokeSearch(pokeList){
+
     for(let poke of pokeList){
         if (poke = "name"){}
         else if(poke = "height"){}
