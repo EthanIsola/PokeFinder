@@ -8,28 +8,48 @@ pokepic = document.getElementById('pokemon')
 
 
 addEventListener('DOMContentLoaded', ()=> {
-    fetch(`${search}pikachu`)
-    .then(promise => promise.json())
-    .then(pokemon => {
-    pokeSearch(pokemon)
-
-    })
+    pokeSearch('pikachu')
 })
 
 
 //parses data from pokemon search fetch request
-function pokeSearch(pokeList){
+function pokeSearch(pokename){
+    fetch(`${search}${name}`)
+    .then(promise => promise.json())
+    .then(pokemon => {
+    for(let stat of pokemon){
+        //updates page to display pokemons name
+        if (stat = "name"){
+            let newElement = document.createElement('li')
+            newElement.innerText = stat
+            sideList.appendChild(newElement)
+        }
 
-    for(let poke of pokeList){
-        if (poke = "name"){}
-        else if(poke = "height"){}
-        else if(poke = "weight"){}
-        else if(poke = "types"){
-            for(let item of poke){
-                if(item = "type"){}
+        //updates page to display pokemons height
+        else if(stat = "height"){
+            let newElement = document.createElement('li')
+            newElement.innerText = stat
+            sideList.appendChild(newElement)    
+        }
+
+        //updates page to display pokemons weight
+        else if(stat = "weight"){
+            let newElement = document.createElement('li')
+            newElement.innerText = stat
+            sideList.appendChild(newElement)
+        }
+
+        //updates page to display pokemons type(s)
+        else if(stat = "types"){
+            for(let item of stat){
+                if(item = "type"){
+                    let newElement = document.createElement('li')
+                    newElement.innerText = item
+                    sideList.appendChild(newElement)
+                }
             }
         }
-    }
+    }})
 }
 
 //Pokemon by region by max ID
@@ -55,12 +75,10 @@ function getRandomIntInclusive(min, max) {
 }
 
 //generates random encounter
-.addEventListener('click', rnde())
+randButtom.addEventListener('click', rnde())
+
+//displays stats of random pokemon when button is clicked
 function rnde(){
     let num = getRandomIntInclusive(1,890)
-    fetch(`${search}${num}`)
-    .then(promise => promise.json())
-    .then(pokemon =>{
-    pokeSearch(pokemon)
-    })
+    pokeSearch(num)
 }
