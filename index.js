@@ -20,13 +20,24 @@ function pokeSearch(pokename){
     .then(pokemon => {
     for(let stat in pokemon){
         //updates page to display pokemon image
+        if(getRandomIntInclusive(1, 10) != 10){
         if (stat == "sprites"){
             for(let sprite in stat){
                 if(sprite = "front_default"){
                     pokepic.src = pokemon[stat][sprite]
                 }
             }
+        }}
+        else{
+            if (stat == "sprites"){
+                for(let sprite in stat){
+                    if(sprite = "front_shiny"){
+                        pokepic.src = pokemon[stat][sprite]
+                    }
+                }
+            }
         }
+        
 
         //updates page to display pokemons name
         if (stat == "name"){
