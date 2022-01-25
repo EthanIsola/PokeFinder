@@ -1,5 +1,5 @@
 let search = "https://pokeapi.co/api/v2/pokemon/"
-let name = document.getElementById('search-bar')
+let searchName = document.getElementById('search-bar')
 randButtom = document.getElementById('encounter')
 sideList = document.getElementById('pokemon-list')
 pokepic = document.getElementById('pokemon')
@@ -23,8 +23,6 @@ function pokeSearch(pokename){
         if (stat == "sprites"){
             for(let sprite in stat){
                 if(sprite = "front_default"){
-                    
-                    let newElement = document.createElement('img')
                     pokepic.src = pokemon[stat][sprite]
                 }
             }
@@ -40,14 +38,14 @@ function pokeSearch(pokename){
         //updates page to display pokemons height
         else if(stat == "height"){
             let newElement = document.createElement('li')
-            newElement.textContent = pokemon[stat]
+            newElement.textContent = `Height: ${pokemon[stat]}`
             sideList.appendChild(newElement)    
         }
 
         //updates page to display pokemons weight
         else if(stat == "weight"){
             let newElement = document.createElement('li')
-            newElement.innerText = `${pokemon[stat]}`
+            newElement.innerText = `Weight: ${pokemon[stat]}`
             sideList.appendChild(newElement)
         }
 
@@ -93,3 +91,5 @@ function rnde(){
     let num = getRandomIntInclusive(1,890)
     pokeSearch(num)
 }
+
+searchName.addEventListener('change', ()=> console.log(pokeSearch(`${searchName.value}`)))
