@@ -19,6 +19,12 @@ input#search-bar, button#encounter {
    
 }
 
+
+/* Style Pokemon list in container */
+ul#pokemon-list {
+    padding-left: 40px;
+}
+
 /* needs to be placed next to PokeFinder (to the right) */
 img#pokeball{ 
     display: flex;
