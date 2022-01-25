@@ -1,8 +1,7 @@
 let search = "https://pokeapi.co/api/v2/pokemon/"
-let name;
-randButtom = document.getElementById('subrandom')
-searchButton = document.getElementById('subsearch')
-sideList = document.querySelector('ul')
+let name = document.getElementById('search-bar')
+randButtom = document.getElementById('encounter')
+sideList = document.getElementById('pokemon-list')
 pokepic = document.getElementById('pokemon')
 
 
@@ -14,37 +13,51 @@ addEventListener('DOMContentLoaded', ()=> {
 
 //parses data from pokemon search fetch request
 function pokeSearch(pokename){
-    fetch(`${search}${name}`)
+    fetch(`${search}${pokename}`)
     .then(promise => promise.json())
     .then(pokemon => {
-    for(let stat of pokemon){
+        console.log(pokemon)
+    for(let stat in pokemon){
+        console.log(stat)
+        //updates page to display pokemon image
+        if (stat == "sprites"){
+            for(let sprite in stat){
+                if(sprite = "front_default"){
+                    
+                    let newElement = document.createElement('img')
+                    pokepic.src = pokemon[stat][sprite]
+                }
+            }
+        }
+
         //updates page to display pokemons name
-        if (stat = "name"){
+        if (stat == "name"){
             let newElement = document.createElement('li')
-            newElement.innerText = stat
+            newElement.innerText = pokemon[stat]
             sideList.appendChild(newElement)
         }
 
         //updates page to display pokemons height
-        else if(stat = "height"){
+        else if(stat == "height"){
             let newElement = document.createElement('li')
-            newElement.innerText = stat
+            newElement.textContent = pokemon[stat]
+            console.log(newElement)
             sideList.appendChild(newElement)    
         }
 
         //updates page to display pokemons weight
-        else if(stat = "weight"){
+        else if(stat == "weight"){
             let newElement = document.createElement('li')
-            newElement.innerText = stat
+            newElement.innerText = `${pokemon[stat]}`
             sideList.appendChild(newElement)
         }
 
         //updates page to display pokemons type(s)
         else if(stat = "types"){
             for(let item of stat){
-                if(item = "type"){
+                if(item == "type"){
                     let newElement = document.createElement('li')
-                    newElement.innerText = item
+                    newElement.innerText = pokemon[stat][item]
                     sideList.appendChild(newElement)
                 }
             }
@@ -61,11 +74,11 @@ function pokeSearch(pokename){
 //Kalos - 721
 //Alola - 809
 //Galar - 890 
-function mapListener(){
-    .addEventListener('click', ()=>{
+// function mapListener(){
+//     .addEventListener('click', ()=>{
         
-    })
-}
+//     })
+// }
 
 //rng for encounters
 function getRandomIntInclusive(min, max) {
