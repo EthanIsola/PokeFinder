@@ -6,7 +6,9 @@
 *{
     font-family: Pokemonfont;
 }
-
+hr.num1 {
+    border: 1px solid #222224;
+}
 /* header */
 
 h2 {
@@ -43,3 +45,6 @@ img#pokeball{
     width: 2%;
 }
 
+hr.num2 {
+    border: 1px solid #222224;
+}
