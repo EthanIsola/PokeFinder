@@ -1,11 +1,28 @@
+/* header */
+
 h2 {
     display: flex;
     justify-content: center;
 }
 
+/* Style the nav bar  */
+div#header-detail {
+    border: 2px solid black;
+    background-color: red;
+    
+}
 
-img#pokeball{
-    width: 5%;
-    height: auto;
+/*Style the search box and button inside the nav bar */
+input#search-bar, button#encounter {
+    background-color: red;
+    border: 2px solid black;
+   
+}
+
+/* needs to be placed next to PokeFinder (to the right) */
+img#pokeball{ 
+    display: flex;
+    align-items: flex-start;
+    width: 2%;
 }
 
