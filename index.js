@@ -8,6 +8,8 @@ pokepic = document.getElementById('pokemon')
 
 addEventListener('DOMContentLoaded', ()=> {
     pokeSearch('pikachu')
+    //generates random encounter
+    randButtom.addEventListener("click", ()=> rnde())
 })
 
 
@@ -16,9 +18,7 @@ function pokeSearch(pokename){
     fetch(`${search}${pokename}`)
     .then(promise => promise.json())
     .then(pokemon => {
-        console.log(pokemon)
     for(let stat in pokemon){
-        console.log(stat)
         //updates page to display pokemon image
         if (stat == "sprites"){
             for(let sprite in stat){
@@ -41,7 +41,6 @@ function pokeSearch(pokename){
         else if(stat == "height"){
             let newElement = document.createElement('li')
             newElement.textContent = pokemon[stat]
-            console.log(newElement)
             sideList.appendChild(newElement)    
         }
 
@@ -87,8 +86,7 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-//generates random encounter
-randButtom.addEventListener('click', rnde())
+
 
 //displays stats of random pokemon when button is clicked
 function rnde(){
