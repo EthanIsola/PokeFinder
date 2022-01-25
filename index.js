@@ -1,10 +1,12 @@
 let search = "https://pokeapi.co/api/v2/pokemon/"
 let searchName = document.getElementById('search-bar')
-randButtom = document.getElementById('encounter')
-sideList = document.getElementById('pokemon-list')
-pokepic = document.getElementById('pokemon')
-
-
+let randButtom = document.getElementById('encounter')
+let pokepic = document.getElementById('pokemon')
+let pokeName = document.getElementById('nameHolder')
+let pokeHeight= document.getElementById('heightHolder')
+let pokeWeight = document.getElementById('weightHolder')
+let pokeTypes = document.getElementById('typesHolder')
+let searchButton = document.getElementById('')
 
 addEventListener('DOMContentLoaded', ()=> {
     pokeSearch('pikachu')
@@ -41,32 +43,31 @@ function pokeSearch(pokename){
 
         //updates page to display pokemons name
         if (stat == "name"){
-            let newElement = document.createElement('li')
-            newElement.innerText = pokemon[stat]
-            sideList.appendChild(newElement)
+            let newFirst = pokemon[stat][0].toUpperCase()
+            let newName = pokemon[stat].split('')
+            newName.shift()
+            newName.unshift(newFirst)
+            let finalName = newName.join('')
+            pokeName.textContent = `Name: ${finalName}`
         }
 
         //updates page to display pokemons height
         else if(stat == "height"){
-            let newElement = document.createElement('li')
-            newElement.textContent = `Height: ${pokemon[stat]}`
-            sideList.appendChild(newElement)    
+            pokeHeight.textContent = `Height: ${pokemon[stat]}`
+   
         }
 
         //updates page to display pokemons weight
         else if(stat == "weight"){
-            let newElement = document.createElement('li')
-            newElement.innerText = `Weight: ${pokemon[stat]}`
-            sideList.appendChild(newElement)
+            pokeWeight.textContent = `Weight: ${pokemon[stat]}`
+
         }
 
         //updates page to display pokemons type(s)
         else if(stat = "types"){
             for(let item of stat){
                 if(item == "type"){
-                    let newElement = document.createElement('li')
-                    newElement.innerText = pokemon[stat][item]
-                    sideList.appendChild(newElement)
+                    pokeTypes.textContent = `Type(s): ${pokemon[stat][item]}`
                 }
             }
         }
