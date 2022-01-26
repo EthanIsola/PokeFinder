@@ -47,7 +47,8 @@ ul#pokemon-list {
 }
 
 img#pokemon {
-    float: right;
+    float: left;
+    width: 20%;
 }
 
 
