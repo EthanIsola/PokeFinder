@@ -24,7 +24,7 @@ div#header-detail {
 }
 
 /*Style the search box and button inside the nav bar */
-input#search-bar, button#encounter {
+input#search-bar, button#encounter{
     background-color: #ee1515;
     border: 2px solid #222224;
     border-radius: 8px;
@@ -50,6 +50,14 @@ img#pokeball{
     width: 2%;
 }
 
-hr.num2 {
-    border: 1px solid #222224;
+img#region {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
+
+hr.num2,hr.num3 {
+    border: 2px solid #222224;
+}
+
