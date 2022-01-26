@@ -5,7 +5,10 @@
 
 *{
     font-family: Pokemonfont;
+    
 }
+
+
 hr.num1 {
     border: 1px solid #222224;
 }
@@ -20,8 +23,10 @@ h2 {
 div#header-detail {
     border: 2px solid #222224;
     background-color: #f0f0f0;
-    
+    background-image: url(PokemonBadges.png);
+    background-size: cover;
 }
+    
 
 /*Style the search box and button inside the nav bar */
 input#search-bar, button#encounter {
