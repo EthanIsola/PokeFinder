@@ -10,8 +10,8 @@ const searchButton = document.getElementById('search')
 const johto = document.getElementById('Johto')
 const hoenn = document.getElementById('Hoenn')
 const sinnoh = document.getElementById('Sinnoh')
-const Unova = document.getElementById('Unova')
-const Kalos = document.getElementById('Kalos')
+const unova = document.getElementById('Unova')
+const kalos = document.getElementById('Kalos')
 const alola = document.getElementById('Alola')
 const galar = document.getElementById('Galar')
 const mapList = document.getElementById('region-pokemon-container')
@@ -22,13 +22,13 @@ addEventListener('DOMContentLoaded', ()=> {
     randButtom.addEventListener("click", ()=> rnde())
 
     //searches for the pokemon by name when the search button is clicked
-    searchButton.addEventListener('click', ()=> pokeSearch(searchName.value))
+    searchButton.addEventListener('click', ()=> pokeSearch(searchName.value.toLowerCase()))
 })
 
 
 //parses data from pokemon search fetch request
 function pokeSearch(pokename){
-    fetch(`${search}${pokename.toLowerCase()}`)
+    fetch(`${search}${pokename}`)
     .then(promise => promise.json())
     .then(pokemon => {
 
@@ -69,11 +69,81 @@ function pokeSearch(pokename){
 //Galar - 890 
 
 kanto.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
     fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=151')
     .then(prom=>prom.json())
     .then(pokemons=>{
-        console.log(pokemons.results[0].name)
     nameGetter(pokemons, 1, 151)
+    })    
+})
+
+johto.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=251')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 151, 251)
+    })    
+})
+
+hoenn.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=386')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 251, 386)
+    })    
+})
+
+sinnoh.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=493')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 386, 493)
+    })    
+})
+
+unova.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=649')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 493, 649)
+    })    
+})
+
+kalos.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=721')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 649, 721)
+    })    
+})
+
+alola.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=809')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 721, 809)
+    })    
+})
+
+galar.addEventListener('click', ()=> {
+    removeAllChildNodes(mapList)
+    fetch('https://pokeapi.co/api/v2/pokemon?offset=20&limit=890')
+    .then(prom=>prom.json())
+    .then(pokemons=>{
+    console.log(pokemons.results[0].name)
+    nameGetter(pokemons, 809, 890)
     })    
 })
 
@@ -108,4 +178,10 @@ function getRandomIntInclusive(min, max) {
 function rnde(){
     let num = getRandomIntInclusive(1,890)
     pokeSearch(num)
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
