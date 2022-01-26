@@ -6,7 +6,7 @@ let pokeName = document.getElementById('nameHolder')
 let pokeHeight= document.getElementById('heightHolder')
 let pokeWeight = document.getElementById('weightHolder')
 let pokeTypes = document.getElementById('typesHolder')
-let searchButton = document.getElementById('')
+let searchButton = document.getElementById('search')
 
 addEventListener('DOMContentLoaded', ()=> {
     pokeSearch('pikachu')
@@ -96,12 +96,11 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-
-
 //displays stats of random pokemon when button is clicked
 function rnde(){
     let num = getRandomIntInclusive(1,890)
     pokeSearch(num)
 }
 
-searchName.addEventListener('change', ()=> console.log(pokeSearch(`${searchName.value}`)))
+//searches for the pokemon by name when the search button is clicked
+searchButton.addEventListener('click', ()=> console.log(pokeSearch(`${searchName.value}`)))
