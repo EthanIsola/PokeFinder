@@ -24,13 +24,16 @@ div#header-detail {
 }
 
 /*Style the search box and button inside the nav bar */
-input#search-bar, button#encounter{
+input#search-bar, button#encounter {
     background-color: #ee1515;
     border: 2px solid #222224;
     border-radius: 8px;
    
 }
 
+::placeholder {
+    color: #222224;
+}
 
 
 /* Style Pokemon list in container */
@@ -55,14 +58,16 @@ img#region {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    background-size: cover;
+    border-radius: 8px;
 }
 
 hr.num2,hr.num3 {
     border: 2px solid #222224;
 }
 
-button#kanto {
-    position: relative;
+ button#kanto {
+    position: absolute;
     bottom: 100px;
     left: 800px;
 }
