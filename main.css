@@ -1,6 +1,6 @@
 @font-face {
     font-family: Pokemonfont;
-    src: url(https://fonts.google.com/specimen/Press+Start+2P#standard-styles);
+    src: url(PokemonFont.ttf);
 }
 
 *{
@@ -24,13 +24,16 @@ div#header-detail {
 }
 
 /*Style the search box and button inside the nav bar */
-input#search-bar, button#encounter{
+input#search-bar, button#encounter {
     background-color: #ee1515;
     border: 2px solid #222224;
     border-radius: 8px;
    
 }
 
+::placeholder {
+    color: #222224;
+}
 
 
 /* Style Pokemon list in container */
@@ -38,11 +41,11 @@ ul#pokemon-list {
     padding-left: 40px;
 }
 
-.fourwidecolumn { 
-    display: flex;
-    /* Needs to be placed next to pokemon info  */
-
+img#pokemon {
+    float: right;
 }
+
+
 /* needs to be placed next to PokeFinder (to the right) maybe put them in a div together */
 img#pokeball{ 
     display: flex;
@@ -55,9 +58,45 @@ img#region {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    background-size: cover;
+    border-radius: 8px;
 }
 
 hr.num2,hr.num3 {
     border: 2px solid #222224;
 }
 
+ button#kanto {
+    position: absolute;
+    bottom: 100px;
+    left: 800px;
+}
+
+button#Johto {
+
+}
+
+button#Hoenn{
+
+}
+
+button#Sinnoh{
+
+}
+
+
+button#Unova{
+
+}
+
+button#Kalos{
+
+}
+
+button#Alola{
+
+}
+
+button#Galar{
+    
+}
