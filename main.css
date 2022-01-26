@@ -41,11 +41,11 @@ ul#pokemon-list {
     padding-left: 40px;
 }
 
-.fourwidecolumn { 
-    display: flex;
-    /* Needs to be placed next to pokemon info  */
-
+img#pokemon {
+    float: right;
 }
+
+
 /* needs to be placed next to PokeFinder (to the right) maybe put them in a div together */
 img#pokeball{ 
     display: flex;
