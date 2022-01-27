@@ -41,10 +41,12 @@ function pokeSearch(pokename){
     pokeName.textContent = `Name: ${finalName}`
 
     //returns pokemon height
-    pokeHeight.textContent = `Height: ${pokemon.height}`
+    let newHeight = (pokemon.height * 0.328084).toFixed(2)
+    pokeHeight.textContent = `Height: ${newHeight} ft`
 
     //returns pokemon weight
-    pokeWeight.textContent = `Weight: ${pokemon.weight}`
+    let newWeight = (pokemon.weight * 0.220462).toFixed(2)
+    pokeWeight.textContent = `Weight: ${newWeight} lbs`
 
     //returns pokemon type
     pokeTypes.textContent = `Type: ${pokemon["types"]["0"]["type"]["name"]}`
