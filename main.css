@@ -3,6 +3,10 @@
     src: url(PokemonFont.ttf);
 }
 
+body {
+    background-color: #868282;
+}
+
 *{
     font-family: Pokemonfont;
     
@@ -49,11 +53,13 @@ button#encounter {
 /* Style Pokemon list in container */
 ul#pokemon-list {
     padding-left: 40px;
+    display: inline;
 }
 
 img#pokemon {
     float: left;
     width: 20%;
+    display: inline;
 }
 
 
@@ -71,9 +77,8 @@ hr.num2,hr.num3 {
 
  button#kanto {
     position: relative;
-    bottom: 400px;
-    left: 000px;
-    
+    bottom: 38px;
+    right: 150px;
 }
 
 button#Johto {
@@ -85,9 +90,10 @@ button#Hoenn{
 }
 
 button#Sinnoh{
-
+    position: relative;
+    bottom: 220px;
+    left: 800px;
 }
-
 
 button#Unova{
 
@@ -102,5 +108,9 @@ button#Alola{
 }
 
 button#Galar{
+    
+}
+
+ul.regionList {
     
 }
