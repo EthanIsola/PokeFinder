@@ -131,8 +131,11 @@ button#Galar{
     
 } */
 
+button.region {
+    border-radius: 8px;
+}
+
 button.region:active:hover{
     transform: translateY(4px);
-    border-radius: 8px;
     opacity: 0.9;
 }
