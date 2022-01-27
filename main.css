@@ -24,7 +24,7 @@ div#header-detail {
     border: 2px solid #222224;
     background-color: #f0f0f0;
     background-image: url(PokemonBadges.png);
-    background-size: cover;
+    background-size: 50%;
 }
     
 
@@ -34,6 +34,11 @@ input#search-bar, button#encounter {
     border: 2px solid #222224;
     border-radius: 8px;
    
+}
+
+button#encounter {
+    display: float;
+    
 }
 
 ::placeholder {
@@ -52,23 +57,12 @@ img#pokemon {
 }
 
 
-/* needs to be placed next to PokeFinder (to the right) maybe put them in a div together */
-img#pokeball{ 
-    display: flex;
-    align-items: flex-start;
-    width: 2%;
-}
-
 img#region {
-    /* display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    background-size: cover;
+    /* display: flex;
+    justify-content:flex-end;
     border-radius: 8px;
-    border: 2px solid #222224; */
-    display: flex;
-    
+    border: 2px solid #222224;
+    width: 50%; */
 }
 
 hr.num2,hr.num3 {
@@ -78,7 +72,7 @@ hr.num2,hr.num3 {
  button#kanto {
     position: relative;
     bottom: 400px;
-    left: 1000px;
+    left: 000px;
     
 }
 
