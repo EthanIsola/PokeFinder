@@ -127,9 +127,9 @@ button#Galar{
     right: 200px;
 }
 
-/* ul.regionList {
-    
-} */
+ul#region-pokemon-container{
+    cursor: pointer;
+}
 
 button.region {
     border-radius: 8px;
