@@ -24,7 +24,7 @@ div#header-detail {
     border: 2px solid #222224;
     background-color: #f0f0f0;
     background-image: url(PokemonBadges.png);
-    background-size: 50%;
+    background-size: 75%;
 }
     
 
@@ -70,9 +70,7 @@ hr.num2,hr.num3 {
 }
 
  button#kanto {
-    position: relative;
-    bottom: 400px;
-    left: 000px;
+    
     
 }
 
