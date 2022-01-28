@@ -5,11 +5,15 @@
 
 body {
     background-color: #868282;
+    box-shadow: 0 5px #666;
+    width: 100px;
+    height: 100px; 
+    min-width: 1000px; 
+    min-height: 1000px; 
 }
 
 *{
     font-family: Pokemonfont;
-    
 }
 
 
@@ -28,7 +32,7 @@ div#header-detail {
     border: 2px solid #222224;
     background-color: #f0f0f0;
     background-image: url(PokemonBadges.png);
-    background-size: 50%;
+    background-size: 75%;
 }
     
 
@@ -37,6 +41,8 @@ input#search-bar, button#encounter {
     background-color: #ee1515;
     border: 2px solid #222224;
     border-radius: 8px;
+    box-shadow: 0 0.5px #666
+    
    
 }
 
@@ -64,11 +70,9 @@ img#pokemon {
 
 
 img#region {
-    /* display: flex;
-    justify-content:flex-end;
     border-radius: 8px;
     border: 2px solid #222224;
-    width: 50%; */
+    
 }
 
 hr.num2,hr.num3 {
@@ -82,35 +86,56 @@ hr.num2,hr.num3 {
 }
 
 button#Johto {
-
+    position: relative;
+    bottom: 200px;
+    left: 630px;
 }
 
 button#Hoenn{
-
+    position: relative;
+    bottom: 93px;
+    left: 500px;
 }
 
 button#Sinnoh{
     position: relative;
-    bottom: 220px;
-    left: 800px;
+    bottom: 228px;
+    left: 555px;
 }
 
 button#Unova{
-
+    position: relative;
+    bottom: 182px;
+    right: 45px;
 }
 
 button#Kalos{
-
+    position: relative;
+    bottom: 114px;
+    left: 50px;
 }
 
 button#Alola{
-
+    position: relative;
+    bottom: 50px;
+    right: 300px;
 }
 
 button#Galar{
-    
+    position: relative;
+    bottom: 245px;
+    right: 200px;
 }
 
-ul.regionList {
-    
+ul#region-pokemon-container{
+    cursor: pointer;
+}
+
+button.region {
+    border-radius: 8px;
+}
+
+button.region:active:hover{
+    transform: translateY(4px);
+    opacity: 0.9;
 }
