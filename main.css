@@ -8,8 +8,8 @@ body {
     box-shadow: 0 5px #666;
     width: 100px;
     height: 100px; 
-    min-width: 1000px; 
-    min-height: 1000px; 
+    min-width: 2000px; 
+    min-height: 2000px; 
 }
 
 *{
